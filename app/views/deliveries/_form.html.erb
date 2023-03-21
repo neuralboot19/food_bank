@@ -1,0 +1,20 @@
+<%= form_with model: @delivery do |form| %>
+  <% @delivery.errors.full_messages.each do |error| %>
+    <div>
+      <%= error %>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.label :observation %>
+    <%= form.text_area :observation %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
