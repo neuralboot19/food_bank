@@ -28,7 +28,7 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     }
 
     assert_redirected_to deliveries_path
-    assert_equal flash[:notice], 'Created success delivery'
+    assert_equal flash[:notice], 'Delivery created success'
   end
 
   test 'does not allow to create a new delivery with empty fields' do
@@ -58,7 +58,7 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     }
 
     assert_redirected_to deliveries_path
-    assert_equal flash[:notice], 'Update success delivery'
+    assert_equal flash[:notice], 'Delivery update success'
   end
 
   test 'does not allow to update a delivery with an invalid field' do
@@ -77,7 +77,7 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to deliveries_path
-    assert_equal flash[:notice], 'Delete success delivery'
+    assert_equal flash[:notice], 'Delivery delete success'
   end
 
 end

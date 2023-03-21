@@ -1,0 +1,36 @@
+es:
+  title: "IVD - Banco de alimentos"
+  activerecord:
+    models:
+      delivery: 'Entrega'
+    attributes:
+      delivery:
+        quantity: 'Kilogramos'
+        observation: 'Observación'
+    errors:
+      models:
+        delivery:
+          attributes:
+            quantity:
+              blank: 'no puede estar vacío'
+            observation:
+              blank: 'no puede estar vacía'
+  common:
+    confirm: 'Estás segur@?'
+    delete: 'Eliminar'
+  header:
+    link:
+      new_delivery: 'Nueva Entrada'
+  deliveries:
+    index:
+      title: 'Entregas'
+    edit:
+      title: 'Editar Entrega'
+    new:
+      title: 'Nueva Entrega'
+    create:
+      created: 'Entrega creada exitosa'
+    update:
+      updated: 'Entrega actualizada exitosa'
+    destroy:
+      deleted: 'Entrega eliminada exitosa'

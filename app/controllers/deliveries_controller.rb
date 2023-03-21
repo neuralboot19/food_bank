@@ -11,7 +11,7 @@ class DeliveriesController < ApplicationController
     @delivery = Delivery.new(delivery_params)
 
     if @delivery.save
-      redirect_to deliveries_path, notice: 'Created success delivery'
+      redirect_to deliveries_path, notice: t('.created')
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,7 +23,7 @@ class DeliveriesController < ApplicationController
 
   def update
     if delivery.update(delivery_params)
-      redirect_to deliveries_path, notice: 'Update success delivery'
+      redirect_to deliveries_path, notice: t('.updated')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class DeliveriesController < ApplicationController
   def destroy
     delivery.destroy
 
-    redirect_to deliveries_path, notice: 'Delete success delivery', status: :see_other
+    redirect_to deliveries_path, notice: t('.deleted'), status: :see_other
   end
 
   private
