@@ -1,4 +1,4 @@
-<%= link_to edit_delivery_path(delivery), class: 'delivery' do %>
+<%= link_to edit_delivery_path(delivery), class: 'delivery', 'data-turbo-frame': '_top' do %>
   <h2><%= delivery.quantity %>kg</h2>
   <p><%= delivery.observation %></p>
   <p><%= delivery.beneficiary.names %></p>

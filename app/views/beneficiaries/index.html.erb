@@ -1,3 +1,5 @@
-<h1><%= t('.title') %></h1>
+<%= turbo_frame_tag 'beneficiary' do %>
+  <h1><%= t('.title') %></h1>
 
-<%= render partial: 'beneficiary', collection: @beneficiaries %>
+  <%= render partial: 'beneficiary', collection: @beneficiaries %>
+<% end %>
