@@ -1,0 +1,27 @@
+<%= link_to edit_beneficiary_path(beneficiary), class: 'beneficiary' do %>
+  <p><%= beneficiary.names %></p>
+
+  <p><%= beneficiary.email %></p>
+
+  <p><%= beneficiary.first_surname %></p>
+
+  <p><%= beneficiary.second_surname %></p>
+
+  <p><%= beneficiary.cel_phone %></p>
+
+  <p><%= beneficiary.born %></p>
+
+  <p><%= beneficiary.other_address %></p>
+
+  <p><%= beneficiary.expiration_date_document %></p>
+
+  <p><%= beneficiary.status_document %></p>
+
+  <p><%= beneficiary.family_unit %></p>
+
+  <p><%= beneficiary.terms_conditions %></p>
+<% end %>
+<%= link_to t('common.delete'), beneficiary_path(beneficiary), data: {
+  turbo_method: :delete,
+  turbo_confirm: t('common.confirm')
+} %>

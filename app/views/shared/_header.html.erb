@@ -3,5 +3,8 @@
     <h1><%= t('title') %></h1>
   <% end %>
 
+  <%= link_to t('header.link.delivery'), deliveries_path %>
   <%= link_to t('header.link.new_delivery'), new_delivery_path %>
+  <%= link_to t('header.link.beneficiaries'), beneficiaries_path %>
+  <%= link_to t('header.link.new_beneficiary'), new_beneficiary_path %>
 </header>

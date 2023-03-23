@@ -10,13 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_20_211351) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_21_172635) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "beneficiaries", force: :cascade do |t|
+    t.string "names", null: false
+    t.string "email", null: false
+    t.string "first_surname", null: false
+    t.string "second_surname", null: false
+    t.integer "cel_phone", default: 0, null: false
+    t.datetime "born", null: false
+    t.string "other_address", null: false
+    t.datetime "expiration_date_document", null: false
+    t.boolean "status_document", default: false
+    t.integer "family_unit", default: 1, null: false
+    t.boolean "terms_conditions", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "deliveries", force: :cascade do |t|
-    t.string "quantity", null: false
-    t.string "observation", null: false
+    t.string "quantity", default: "0.0", null: false
+    t.string "observation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -2,35 +2,86 @@ es:
   title: "IVD - Banco de alimentos"
   activerecord:
     models:
-      delivery: 'Entrega'
+      delivery: "Entrega"
+      beneficiary: "Beneficiario"
     attributes:
       delivery:
-        quantity: 'Kilogramos'
-        observation: 'Observación'
+        quantity: "Kilogramos"
+        observation: "Observación"
+      beneficiary:
+        names: "Nombre completo"
+        email: "Correo electrónico"
+        first_surname: "Primer apellido"
+        second_surname: "Segundo apellido"
+        cel_phone: "Teléfono móvil"
+        born: "Nacimiento"
+        other_address: "Dirección"
+        expiration_date_document: "Fecha de caducidad Padrón"
+        status_document: "Estado documento"
+        family_unit: "Unidad familiar"
+        terms_conditions: "Términos y condiciones"
     errors:
       models:
         delivery:
           attributes:
             quantity:
-              blank: 'no puede estar vacío'
+              blank: "no puede estar vacío"
+              invalid: "es invalido"
             observation:
-              blank: 'no puede estar vacía'
+              blank: "no puede estar vacía"
+        beneficiary:
+          attributes:
+            names:
+              blank: "no puede estar vacío"
+            email:
+              blank: "no puede estar vacío"
+              invalid: "es invalido"
+            first_surname:
+              blank: "no puede estar vacío"
+            second_surname:
+              blank: "no puede estar vacío"
+            other_address:
+              blank: "no puede estar vacío"
+            born:
+              blank: "no puede estar vacío"
+            expiration_date_document:
+              blank: "no puede estar vacío"
+            cel_phone:
+              too_short: "muy corto"
+            terms_conditions:
+              accepted: "debe aceptar"
   common:
-    confirm: 'Estás segur@?'
-    delete: 'Eliminar'
+    confirm: "Estás segur@?"
+    delete: "Eliminar"
   header:
     link:
-      new_delivery: 'Nueva Entrada'
+      delivery: "Entradas"
+      new_delivery: "Nueva Entrada"
+      beneficiaries: "Beneficiarios"
+      new_beneficiary: "Nuevo Beneficiario"
   deliveries:
     index:
-      title: 'Entregas'
+      title: "Entregas"
     edit:
-      title: 'Editar Entrega'
+      title: "Editar Entrega"
     new:
-      title: 'Nueva Entrega'
+      title: "Nueva Entrega"
     create:
-      created: 'Entrega creada exitosa'
+      created: "Entrega creado con éxito."
     update:
-      updated: 'Entrega actualizada exitosa'
+      updated: "Entrega actualizado con éxito."
     destroy:
-      deleted: 'Entrega eliminada exitosa'
+      deleted: "Entrega eliminado con éxito."
+  beneficiaries:
+    index:
+      title: "Beneficiarios"
+    edit:
+      title: "Editar beneficiario"
+    new:
+      title: "Nuevo beneficiario"
+    create:
+      created: "Beneficiario creado con éxito."
+    update:
+      updated: "Beneficiario actualizado con éxito."
+    destroy:
+      deleted: "Beneficiario eliminado con éxito."

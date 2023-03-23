@@ -1,3 +1,9 @@
 class Delivery < ApplicationRecord
-  validates :quantity, presence: true
+  validates :quantity, length: { minimum: 1, maximum: 4 }, numericality: true, presence: true
+  validate :greater_than
+
+  private
+    def greater_than
+      errors.add(:quantity) if quantity == "0.0" || quantity == "0"
+    end
 end

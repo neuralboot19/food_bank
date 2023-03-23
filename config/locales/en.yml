@@ -2,35 +2,86 @@ en:
   title: "IVD - Food Bank"
   activerecord:
     models:
-      delivery: 'Delivery'
+      delivery: "Delivery"
+      beneficiary: "Beneficiary"
     attributes:
       delivery:
-        quantity: 'Kilograms'
-        observation: 'Observation'
+        quantity: "Kilograms"
+        observation: "Observation"
+      beneficiary:
+        names: "Full name"
+        email: "Email"
+        first_surname: "First surname"
+        second_surname: "Second surname"
+        cel_phone: "Cell phone"
+        born: "Born"
+        other_address: "Address"
+        expiration_date_document: "Expiration date document"
+        status_document: "Status document"
+        family_unit: "Family unit"
+        terms_conditions: "Terms"
     errors:
       models:
         delivery:
           attributes:
             quantity:
               blank: "can't be blank"
+              invalid: "invalid"
             observation:
               blank: "can't be blank"
+        beneficiary:
+          attributes:
+            names:
+              blank: "can't be blank"
+            email:
+              blank: "can't be blank"
+              invalid: "invalid"
+            first_surname:
+              blank: "can't be blank"
+            second_surname:
+              blank: "can't be blank"
+            other_address:
+              blank: "can't be blank"
+            born:
+              blank: "can't be blank"
+            expiration_date_document:
+              blank: "can't be blank"
+            cel_phone:
+              too_short: "too short"
+            terms_conditions:
+              accepted: "must accept"              
   common:
-    confirm: 'You are sure?'
-    delete: 'Delete'
+    confirm: "You are sure?"
+    delete: "Delete"
   header:
     link:
-      new_delivery: 'Added delivery'
+      delivery: "Delivery"
+      new_delivery: "Added delivery"
+      beneficiaries: "Beneficiaries"
+      new_beneficiary: "Added beneficiary"
   deliveries:
     index:
-      title: 'Deliveries'
+      title: "Deliveries"
     edit:
-      title: 'Edit delivery'
+      title: "Edit delivery"
     new:
-      title: 'New delivery'
+      title: "New delivery"
     create:
-      created: 'Delivery created success'
+      created: "Delivery was successfully created."
     update:
-      updated: 'Delivery update success'
+      updated: "Delivery was successfully updated."
     destroy:
-      deleted: 'Delivery delete success'
+      deleted: "Delivery was successfully destroyed."
+  beneficiaries:
+    index:
+      title: "Beneficiaries"
+    edit:
+      title: "Edit beneficiary"
+    new:
+      title: "New beneficiary"
+    create:
+      created: "Beneficiary was successfully created."
+    update:
+      updated: "Beneficiary was successfully updated."
+    destroy:
+      deleted: "Beneficiary was successfully destroyed."

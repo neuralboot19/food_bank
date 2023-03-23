@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class DeliveriesControllerTest < ActionDispatch::IntegrationTest
-  test 'render a list of deliveries' do
+  setup do
+    @delivery = deliveries(:one)
+  end
+
+  test 'should get index' do
     # Se realiza la petición a la ruta
     get deliveries_path
 
@@ -12,57 +16,56 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     assert_select '.delivery', 2
   end
 
-  test 'render a new delivery form' do
+  test 'should get new' do
     get new_delivery_path
-
     assert_response :success
     assert_select 'form'
   end
 
-  test 'allows to create a new delivery' do
+  test 'should create delivery' do
     post deliveries_path, params: {
       delivery: {
-        quantity: '23.45',
-        observation: 'Delivery'
+        quantity: @delivery.quantity,
+        observation: @delivery.observation
       }
     }
 
     assert_redirected_to deliveries_path
-    assert_equal flash[:notice], 'Delivery created success'
+    assert_equal flash[:notice], 'Delivery was successfully created.'
   end
 
   test 'does not allow to create a new delivery with empty fields' do
     post deliveries_path, params: {
       delivery: {
         quantity: '',
-        observation: 'Delivery'
+        observation: @delivery.observation
       }
     }
 
     assert_response :unprocessable_entity
   end
 
-  test 'render an edit delivery form' do
-    get edit_delivery_path(deliveries(:one))
+  test 'should get edit' do
+    get edit_delivery_path(@delivery)
 
     assert_response :success
     assert_select 'form'
   end
 
-  test 'allows to update a delivery' do
-    patch delivery_path(deliveries(:one)), params: {
+  test 'should update delivery' do
+    patch delivery_path(@delivery), params: {
       delivery: {
-        quantity: '23',
-        observation: 'Delivery'
+        quantity: @delivery.quantity,
+        observation: @delivery.observation
       }
     }
 
     assert_redirected_to deliveries_path
-    assert_equal flash[:notice], 'Delivery update success'
+    assert_equal flash[:notice], 'Delivery was successfully updated.'
   end
 
   test 'does not allow to update a delivery with an invalid field' do
-    patch delivery_path(deliveries(:one)), params: {
+    patch delivery_path(@delivery), params: {
       delivery: {
         quantity: nil
       }
@@ -71,13 +74,13 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
-  test 'can delete deliveries' do
+  test 'should destroy delivery' do
     assert_difference('Delivery.count', -1) do
-      delete delivery_path(deliveries(:one))
+      delete delivery_path(@delivery)
     end
 
     assert_redirected_to deliveries_path
-    assert_equal flash[:notice], 'Delivery delete success'
+    assert_equal flash[:notice], 'Delivery was successfully destroyed.'
   end
 
 end

@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+maria:
+  names: Maria
+  email: maria@test.com
+  first_surname: Maria
+  second_surname: Carrizo
+  cel_phone: 603169051
+  born: 1987-03-21 18:26:35
+  other_address: MyString
+  expiration_date_document: 2024-03-21 18:26:35
+  status_document: true
+  family_unit: 1
+  terms_conditions: true
+
+jose:
+  names: Jose
+  email: jose@test.com
+  first_surname: Jose
+  second_surname: Miguel
+  cel_phone: 603169051
+  born: 1987-03-21 18:26:35
+  other_address: MyString
+  expiration_date_document: 2024-03-21 18:26:35
+  status_document: true
+  family_unit: 3
+  terms_conditions: true

@@ -1,10 +1,15 @@
 class DeliveriesController < ApplicationController
+  before_action :set_delivery, only: %i[ edit update destroy ]
+
   def index
     @deliveries = Delivery.all
   end
 
   def new
     @delivery = Delivery.new
+  end
+
+  def edit
   end
 
   def create
@@ -17,12 +22,8 @@ class DeliveriesController < ApplicationController
     end
   end
 
-  def edit
-    delivery
-  end
-
   def update
-    if delivery.update(delivery_params)
+    if @delivery.update(delivery_params)
       redirect_to deliveries_path, notice: t('.updated')
     else
       render :edit, status: :unprocessable_entity
@@ -30,18 +31,16 @@ class DeliveriesController < ApplicationController
   end
 
   def destroy
-    delivery.destroy
-
+    @delivery.destroy
     redirect_to deliveries_path, notice: t('.deleted'), status: :see_other
   end
 
   private
+    def set_delivery
+      @delivery = Delivery.find(params[:id])
+    end
 
-  def delivery_params
-    params.require(:delivery).permit(:quantity, :observation)
-  end
-
-  def delivery
-    @delivery = Delivery.find(params[:id])
-  end
+    def delivery_params
+      params.require(:delivery).permit(:quantity, :observation)
+    end
 end
