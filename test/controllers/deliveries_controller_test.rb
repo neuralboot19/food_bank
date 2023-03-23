@@ -13,7 +13,7 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     
     # Se selecciona por medio de la clase y se le dice la cantidad de productos que va leer
-    assert_select '.delivery', 2
+    assert_select '.delivery', 3
   end
 
   test 'should get new' do
@@ -26,7 +26,8 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     post deliveries_path, params: {
       delivery: {
         quantity: @delivery.quantity,
-        observation: @delivery.observation
+        observation: @delivery.observation,
+        beneficiary_id: @delivery.beneficiary.id
       }
     }
 
@@ -38,7 +39,8 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     post deliveries_path, params: {
       delivery: {
         quantity: '',
-        observation: @delivery.observation
+        observation: @delivery.observation,
+        beneficiary_id: @delivery.beneficiary.id
       }
     }
 
@@ -56,7 +58,8 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     patch delivery_path(@delivery), params: {
       delivery: {
         quantity: @delivery.quantity,
-        observation: @delivery.observation
+        observation: @delivery.observation,
+        beneficiary_id: @delivery.beneficiary.id
       }
     }
 

@@ -2,7 +2,7 @@ class DeliveriesController < ApplicationController
   before_action :set_delivery, only: %i[ edit update destroy ]
 
   def index
-    @deliveries = Delivery.all
+    @deliveries = Delivery.order(created_at: :desc)
   end
 
   def new
@@ -41,6 +41,6 @@ class DeliveriesController < ApplicationController
     end
 
     def delivery_params
-      params.require(:delivery).permit(:quantity, :observation)
+      params.require(:delivery).permit(:quantity, :observation, :beneficiary_id)
     end
 end

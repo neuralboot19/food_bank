@@ -25,3 +25,16 @@ jose:
   status_document: true
   family_unit: 3
   terms_conditions: true
+
+pedro:
+  names: Pedro
+  email: pedro@test.com
+  first_surname: Pedro
+  second_surname: Cabrera
+  cel_phone: 603169051
+  born: 1987-03-21 18:26:35
+  other_address: MyString
+  expiration_date_document: 2024-03-21 18:26:35
+  status_document: true
+  family_unit: 2
+  terms_conditions: true

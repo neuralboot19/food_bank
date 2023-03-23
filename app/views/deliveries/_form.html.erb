@@ -15,6 +15,11 @@
   </div>
 
   <div>
+    <%= form.label :beneficiary %>
+    <%= form.collection_select :beneficiary_id, Beneficiary.where(status_document: true, terms_conditions: true).order(created_at: :desc), :id, :names %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

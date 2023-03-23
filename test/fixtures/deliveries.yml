@@ -3,7 +3,13 @@
 one:
   quantity: 23.5
   observation: Se paso de kilos para 2 semanas
+  beneficiary: jose
 
 two:
   quantity: 19
-  observation: No tiene actualizado el empadronamiento
+  observation: No tiene actualizado el padrón
+  beneficiary: maria
+
+three:
+  quantity: 23.8
+  beneficiary: maria

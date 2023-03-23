@@ -2,14 +2,14 @@ require "test_helper"
 
 class BeneficiariesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @beneficiary = beneficiaries(:maria)
+    @beneficiary = beneficiaries(:pedro)
   end
 
   test "should get index" do
     get beneficiaries_path
 
     assert_response :success
-    assert_select '.beneficiary', 2
+    assert_select '.beneficiary', 3
   end
 
   test "should get new" do

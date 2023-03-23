@@ -8,6 +8,7 @@ es:
       delivery:
         quantity: "Kilogramos"
         observation: "Observación"
+        beneficiary: "Beneficiario"
       beneficiary:
         names: "Nombre completo"
         email: "Correo electrónico"
