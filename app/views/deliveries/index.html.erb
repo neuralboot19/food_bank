@@ -1,5 +1,9 @@
 <%= turbo_frame_tag 'delivery' do %>
   <h1><%= t('.title') %></h1>
 
+  <%= form_with url: deliveries_path, method: :get do |form| %>
+    <%= form.text_field :query_text, placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
+  <% end %>
+
   <%= render partial: 'delivery', collection: @deliveries %>
 <% end %>

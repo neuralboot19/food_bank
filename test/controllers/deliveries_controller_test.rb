@@ -16,6 +16,22 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     assert_select '.delivery', 3
   end
 
+  test 'render a list of deliveries filtered by email beneficiary' do
+    get deliveries_path(query_text: beneficiaries(:maria).email)
+
+    assert_response :success
+    assert_select '.delivery', 2
+    assert_select 'h2', '19kg'
+  end
+
+  test 'render a list of deliveries filtered by names beneficiary' do
+    get deliveries_path(query_text: beneficiaries(:maria).names)
+
+    assert_response :success
+    assert_select '.delivery', 2
+    assert_select 'h2', '19kg'
+  end
+
   test 'should get new' do
     get new_delivery_path
     assert_response :success

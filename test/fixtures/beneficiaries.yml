@@ -1,8 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 maria:
-  names: Maria
-  email: maria@test.com
+  names: Maria Carrizo
+  email: maria_c@test.com
   first_surname: Maria
   second_surname: Carrizo
   cel_phone: 603169051
@@ -14,8 +14,8 @@ maria:
   terms_conditions: true
 
 jose:
-  names: Jose
-  email: jose@test.com
+  names: Jose Miguel
+  email: jose_m@test.com
   first_surname: Jose
   second_surname: Miguel
   cel_phone: 603169051
@@ -27,8 +27,8 @@ jose:
   terms_conditions: true
 
 pedro:
-  names: Pedro
-  email: pedro@test.com
+  names: Pedro Cabrera
+  email: pedro_c@test.com
   first_surname: Pedro
   second_surname: Cabrera
   cel_phone: 603169051

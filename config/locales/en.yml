@@ -63,6 +63,7 @@ en:
   deliveries:
     index:
       title: "Deliveries"
+      query_text: "Names or Email beneficiary"
     edit:
       title: "Edit delivery"
     new:

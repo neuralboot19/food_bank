@@ -63,6 +63,7 @@ es:
   deliveries:
     index:
       title: "Entregas"
+      query_text: "Nombre o Correo de Beneficiario"
     edit:
       title: "Editar Entrega"
     new:

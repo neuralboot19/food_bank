@@ -2,7 +2,12 @@ class DeliveriesController < ApplicationController
   before_action :set_delivery, only: %i[ edit update destroy ]
 
   def index
-    @deliveries = Delivery.order(created_at: :desc)
+    @deliveries = Delivery.order(created_at: :desc).load_async
+    if params[:query_text].present?
+      # beneficiary = Beneficiary.where(email: params[:query_text].downcase).last
+      beneficiary = Beneficiary.find_by("email ILIKE :search OR names ILIKE :search", { search: params[:query_text].downcase })
+      @deliveries = @deliveries.where(beneficiary_id: beneficiary.id) if beneficiary.present?
+    end
   end
 
   def new
