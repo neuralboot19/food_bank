@@ -1,4 +1,6 @@
 class Delivery < ApplicationRecord
+  include OrderBy
+
   validates :quantity, length: { minimum: 1, maximum: 4 }, numericality: true, presence: true
   validate :greater_than
 

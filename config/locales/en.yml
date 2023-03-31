@@ -64,6 +64,8 @@ en:
     index:
       title: "Deliveries"
       query_text: "Names or Email beneficiary"
+      newest: "Recently added"
+      updated_last: "Recently updated"
     edit:
       title: "Edit delivery"
     new:
@@ -78,6 +80,8 @@ en:
     index:
       title: "Beneficiaries"
       query_text: "Names or Email beneficiary"
+      newest: "Recently added"
+      updated_last: "Recently updated"
     edit:
       title: "Edit beneficiary"
     new:

@@ -3,7 +3,11 @@
 
   <%= form_with url: beneficiaries_path, method: :get do |form| %>
     <%= form.text_field :query_text, placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
+
+    <%= form.select :order_by, options_for_select(Beneficiary::ORDER_BY.keys.map { |order| [t(".#{order}"), order] }, params[:order_by]), {}, { onChange: 'this.form.requestSubmit()' } %>
   <% end %>
 
-  <%= render partial: 'beneficiary', collection: @beneficiaries %>
+  <div class="beneficiaries">
+    <%= render partial: 'beneficiary', collection: @beneficiaries %>
+  </div>
 <% end %>

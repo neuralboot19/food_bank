@@ -64,6 +64,8 @@ es:
     index:
       title: "Entregas"
       query_text: "Nombre o Correo de Beneficiario"
+      newest: "Recientemente añadido"
+      updated_last: "Recientemente actualizado"
     edit:
       title: "Editar Entrega"
     new:
@@ -78,6 +80,8 @@ es:
     index:
       title: "Beneficiarios"
       query_text: "Nombre o Correo de Beneficiario"
+      newest: "Recientemente añadido"
+      updated_last: "Recientemente actualizado"
     edit:
       title: "Editar beneficiario"
     new:

@@ -32,6 +32,22 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'h2', '19kg'
   end
 
+  test 'sort deliveries by expensive created at' do
+    get deliveries_path(order_by: 'created_at')
+
+    assert_response :success
+    assert_select '.delivery', 3
+    assert_select '.deliveries .delivery:first-child h2', '23.5kg'
+  end
+
+  test 'sort deliveries by expensive updated last' do
+    get deliveries_path(order_by: 'updated_last')
+
+    assert_response :success
+    assert_select '.delivery', 3
+    assert_select '.deliveries .delivery:first-child h2', '23.5kg'
+  end
+
   test 'should get new' do
     get new_delivery_path
     assert_response :success

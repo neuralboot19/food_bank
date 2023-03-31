@@ -2,8 +2,12 @@ class BeneficiariesController < ApplicationController
   before_action :set_beneficiary, only: %i[ edit update destroy ]
 
   def index
-    @beneficiaries = Beneficiary.order(created_at: :desc).load_async
+    @beneficiaries = Beneficiary.all
     @beneficiaries = @beneficiaries.where("email ILIKE :search OR names ILIKE :search", { search: params[:query_text].downcase }) if params[:query_text].present?
+    if params[:order_by].present?
+      order_by = Beneficiary::ORDER_BY.fetch(params[:order_by]&.to_sym, Beneficiary::ORDER_BY[:newest])
+      @beneficiaries = @beneficiaries.order(order_by).load_async
+    end
   end
 
   def new
