@@ -7,7 +7,7 @@ class Beneficiary < ApplicationRecord
     names: 'B'
   }
 
-  validates :names, :first_surname, :second_surname, :other_address, :born, :expiration_date_document, presence: true
+  validates :identity, :names, :first_surname, :second_surname, :other_address, :born, :expiration_date_document, presence: true
   validates :family_unit, length: { minimum: 1, maximum: 2 }, numericality: true, presence: true
   validates :cel_phone, length: { minimum: 8, maximum: 9 }, numericality: true, presence: true
   validates :terms_conditions, acceptance: true

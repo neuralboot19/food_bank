@@ -1,6 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 maria:
+  identity: Y9999999Y
   names: Maria Carrizo
   email: maria_c@test.com
   first_surname: Maria
@@ -14,12 +15,13 @@ maria:
   terms_conditions: true
 
 jose:
+  identity: Y8888888H
   names: Jose Miguel
   email: jose_m@test.com
   first_surname: Jose
   second_surname: Miguel
   cel_phone: 603169051
-  born: 1987-03-21 18:26:35
+  born: 1987-04-24 18:26:35
   other_address: MyString
   expiration_date_document: 2024-03-21 18:26:35
   status_document: true
@@ -27,12 +29,13 @@ jose:
   terms_conditions: true
 
 pedro:
+  identity: Y7777777Y
   names: Pedro Cabrera
   email: pedro_c@test.com
   first_surname: Pedro
   second_surname: Cabrera
   cel_phone: 603169051
-  born: 1987-03-21 18:26:35
+  born: 1990-05-01 18:26:35
   other_address: MyString
   expiration_date_document: 2024-03-21 18:26:35
   status_document: true

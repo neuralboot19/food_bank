@@ -54,6 +54,7 @@ class BeneficiariesControllerTest < ActionDispatch::IntegrationTest
   test "should create beneficiary" do
     post beneficiaries_path, params: {
       beneficiary: {
+        identity: @beneficiary.identity,
         born: @beneficiary.born,
         cel_phone: @beneficiary.cel_phone,
         email: @beneficiary.email,
@@ -82,6 +83,7 @@ class BeneficiariesControllerTest < ActionDispatch::IntegrationTest
   test "should update beneficiary" do
     patch beneficiary_path(@beneficiary), params: {
       beneficiary: {
+        identity: @beneficiary.identity,
         born: @beneficiary.born,
         cel_phone: @beneficiary.cel_phone,
         email: @beneficiary.email,

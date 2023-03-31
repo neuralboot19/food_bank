@@ -46,6 +46,6 @@ class BeneficiariesController < ApplicationController
     end
 
     def beneficiary_params
-      params.require(:beneficiary).permit(:names, :email, :first_surname, :second_surname, :cel_phone, :born, :other_address, :expiration_date_document, :status_document, :family_unit, :terms_conditions)
+      params.require(:beneficiary).permit(:identity, :names, :email, :first_surname, :second_surname, :cel_phone, :born, :other_address, :expiration_date_document, :status_document, :family_unit, :terms_conditions)
     end
 end

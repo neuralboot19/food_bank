@@ -1,4 +1,6 @@
 <%= link_to edit_beneficiary_path(beneficiary), class: 'beneficiary', 'data-turbo-frame': '_top' do %>
+  <p><%= beneficiary.identity %></p>
+
   <p><%= beneficiary.names %></p>
 
   <p><%= beneficiary.email %></p>

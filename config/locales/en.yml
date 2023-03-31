@@ -10,6 +10,7 @@ en:
         observation: "Observation"
         beneficiary: "Beneficiary"
       beneficiary:
+        identity: "DNI / NIE / PASS"
         names: "Full name"
         email: "Email"
         first_surname: "First surname"

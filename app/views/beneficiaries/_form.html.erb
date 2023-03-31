@@ -12,23 +12,28 @@
   <% end %>
 
   <div>
+    <%= form.label :identity, style: "display: block" %>
+    <%= form.text_field :identity, required: true %>
+  </div>
+
+  <div>
     <%= form.label :names, style: "display: block" %>
-    <%= form.text_field :names %>
+    <%= form.text_field :names, required: true %>
   </div>
 
   <div>
     <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, required: true %>
   </div>
 
   <div>
     <%= form.label :first_surname, style: "display: block" %>
-    <%= form.text_field :first_surname %>
+    <%= form.text_field :first_surname, required: true %>
   </div>
 
   <div>
     <%= form.label :second_surname, style: "display: block" %>
-    <%= form.text_field :second_surname %>
+    <%= form.text_field :second_surname, required: true %>
   </div>
 
   <div>
@@ -38,17 +43,17 @@
 
   <div>
     <%= form.label :born, style: "display: block" %>
-    <%= form.datetime_field :born %>
+    <%= form.text_field :born, required: true, type: :date, value: form.object.born.try(:strftime,"%Y-%m-%d") %>
   </div>
 
   <div>
     <%= form.label :other_address, style: "display: block" %>
-    <%= form.text_field :other_address %>
+    <%= form.text_field :other_address, required: true %>
   </div>
 
   <div>
     <%= form.label :expiration_date_document, style: "display: block" %>
-    <%= form.datetime_field :expiration_date_document %>
+    <%= form.text_field :expiration_date_document, required: true, type: :date, value: form.object.expiration_date_document.try(:strftime,"%Y-%m-%d") %>
   </div>
 
   <div>
