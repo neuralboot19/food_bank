@@ -5,7 +5,7 @@ class DeliveriesController < ApplicationController
     @deliveries = Delivery.all
     if params[:query_text].present?
       # beneficiary = Beneficiary.where(email: params[:query_text].downcase).last
-      beneficiary = Beneficiary.find_by("email ILIKE :search OR names ILIKE :search", { search: params[:query_text].downcase })
+      beneficiary = Beneficiary.find_by("email ILIKE :search OR names ILIKE :search OR identity ILIKE :search", { search: params[:query_text].downcase })
       @deliveries = @deliveries.where(beneficiary_id: beneficiary.id) if beneficiary.present?
     end
     if params[:order_by].present?

@@ -64,7 +64,7 @@ es:
   deliveries:
     index:
       title: "Entregas"
-      query_text: "Nombre o Correo de Beneficiario"
+      query_text: "Buscar entrega por DNI/NIE/PASS Nombres o Correo de Beneficiario"
       newest: "Recientemente añadido"
       updated_last: "Recientemente actualizado"
     edit:
@@ -80,7 +80,7 @@ es:
   beneficiaries:
     index:
       title: "Beneficiarios"
-      query_text: "Nombre o Correo de Beneficiario"
+      query_text: "Buscar por DNI/NIE/PASS Nombres o Correo"
       newest: "Recientemente añadido"
       updated_last: "Recientemente actualizado"
     edit:

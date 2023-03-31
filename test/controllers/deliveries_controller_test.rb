@@ -32,6 +32,14 @@ class DeliveriesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'h2', '19kg'
   end
 
+  test 'render a list of deliveries filtered by identity beneficiary' do
+    get deliveries_path(query_text: beneficiaries(:maria).identity)
+
+    assert_response :success
+    assert_select '.delivery', 2
+    assert_select 'h2', '19kg'
+  end
+
   test 'sort deliveries by expensive created at' do
     get deliveries_path(order_by: 'created_at')
 

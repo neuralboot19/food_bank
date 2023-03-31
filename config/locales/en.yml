@@ -64,7 +64,7 @@ en:
   deliveries:
     index:
       title: "Deliveries"
-      query_text: "Names or Email beneficiary"
+      query_text: "Search delivery by DNI/NIE/PASS Names or Email of beneficiary"
       newest: "Recently added"
       updated_last: "Recently updated"
     edit:
@@ -80,7 +80,7 @@ en:
   beneficiaries:
     index:
       title: "Beneficiaries"
-      query_text: "Names or Email beneficiary"
+      query_text: "Search by DNI/NIE/PASS Names or Email"
       newest: "Recently added"
       updated_last: "Recently updated"
     edit:

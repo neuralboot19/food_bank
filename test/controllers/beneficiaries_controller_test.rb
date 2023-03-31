@@ -28,6 +28,14 @@ class BeneficiariesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'p', 'Maria Carrizo'
   end
 
+  test 'render a list of beneficiaries filtered by identity' do
+    get beneficiaries_path(query_text: @beneficiary.identity)
+
+    assert_response :success
+    assert_select '.beneficiary', 1
+    assert_select 'p', 'Maria Carrizo'
+  end
+
   test 'sort beneficiaries by expensive created at' do
     get beneficiaries_path(order_by: 'created_at')
 

@@ -3,7 +3,7 @@ class BeneficiariesController < ApplicationController
 
   def index
     @beneficiaries = Beneficiary.all
-    @beneficiaries = @beneficiaries.where("email ILIKE :search OR names ILIKE :search", { search: params[:query_text].downcase }) if params[:query_text].present?
+    @beneficiaries = @beneficiaries.where("email ILIKE :search OR names ILIKE :search OR identity ILIKE :search", { search: params[:query_text].downcase }) if params[:query_text].present?
     if params[:order_by].present?
       order_by = Beneficiary::ORDER_BY.fetch(params[:order_by]&.to_sym, Beneficiary::ORDER_BY[:newest])
       @beneficiaries = @beneficiaries.order(order_by).load_async
