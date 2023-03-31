@@ -77,6 +77,7 @@ en:
   beneficiaries:
     index:
       title: "Beneficiaries"
+      query_text: "Names or Email beneficiary"
     edit:
       title: "Edit beneficiary"
     new:

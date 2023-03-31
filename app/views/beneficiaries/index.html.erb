@@ -1,5 +1,9 @@
 <%= turbo_frame_tag 'beneficiary' do %>
   <h1><%= t('.title') %></h1>
 
+  <%= form_with url: beneficiaries_path, method: :get do |form| %>
+    <%= form.text_field :query_text, placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
+  <% end %>
+
   <%= render partial: 'beneficiary', collection: @beneficiaries %>
 <% end %>

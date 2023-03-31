@@ -2,7 +2,7 @@ require "test_helper"
 
 class BeneficiariesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @beneficiary = beneficiaries(:pedro)
+    @beneficiary = beneficiaries(:maria)
   end
 
   test "should get index" do
@@ -10,6 +10,22 @@ class BeneficiariesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select '.beneficiary', 3
+  end
+
+  test "render a list of beneficiaries filtered by email" do
+    get beneficiaries_path(query_text: @beneficiary.email)
+
+    assert_response :success
+    assert_select '.beneficiary', 1
+    assert_select 'p', 'Maria Carrizo'
+  end
+
+  test 'render a list of beneficiaries filtered by names' do
+    get beneficiaries_path(query_text: @beneficiary.names)
+
+    assert_response :success
+    assert_select '.beneficiary', 1
+    assert_select 'p', 'Maria Carrizo'
   end
 
   test "should get new" do
@@ -70,7 +86,7 @@ class BeneficiariesControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy beneficiary" do
     assert_difference("Beneficiary.count", -1) do
-      delete beneficiary_path(@beneficiary)
+      delete beneficiary_path(beneficiaries(:pedro))
     end
 
     assert_redirected_to beneficiaries_path
