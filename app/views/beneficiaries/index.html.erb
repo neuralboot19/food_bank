@@ -1,4 +1,4 @@
-<%= turbo_frame_tag 'beneficiary' do %>
+<%= turbo_frame_tag 'home' do %>
   <h1><%= t('.title') %></h1>
 
   <%= form_with url: beneficiaries_path, method: :get do |form| %>
@@ -7,7 +7,10 @@
     <%= form.select :order_by, options_for_select(Beneficiary::ORDER_BY.keys.map { |order| [t(".#{order}"), order] }, params[:order_by]), {}, { onChange: 'this.form.requestSubmit()' } %>
   <% end %>
 
-  <div class="beneficiaries">
-    <%= render partial: 'beneficiary', collection: @beneficiaries %>
-  </div>
+  <%= turbo_frame_tag :beneficiaries do %>
+    <%= turbo_frame_tag "beneficiaries-#{@pagy.page}", class: 'beneficiaries' do %>
+      <%= render partial: 'beneficiary', collection: @beneficiaries %>
+      <%= turbo_frame_tag "beneficiaries-#{@pagy.next}", class: 'beneficiaries', src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
+    <% end %>
+  <% end %>
 <% end %>

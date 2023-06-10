@@ -9,7 +9,7 @@ class BeneficiariesControllerTest < ActionDispatch::IntegrationTest
     get beneficiaries_path
 
     assert_response :success
-    assert_select '.beneficiary', 3
+    assert_select '.beneficiary', 12
   end
 
   test "render a list of beneficiaries filtered by email" do
@@ -40,7 +40,7 @@ class BeneficiariesControllerTest < ActionDispatch::IntegrationTest
     get beneficiaries_path(order_by: 'created_at')
 
     assert_response :success
-    assert_select '.beneficiary', 3
+    assert_select '.beneficiary', 12
     assert_select '.beneficiaries .beneficiary:first-child p', 'Maria Carrizo'
   end
 
@@ -48,7 +48,7 @@ class BeneficiariesControllerTest < ActionDispatch::IntegrationTest
     get beneficiaries_path(order_by: 'updated_last')
 
     assert_response :success
-    assert_select '.beneficiary', 3
+    assert_select '.beneficiary', 12
     assert_select '.beneficiaries .beneficiary:first-child p', 'Maria Carrizo'
   end
 
